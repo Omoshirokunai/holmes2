@@ -1,12 +1,12 @@
-# Holmes  :smiley_cat
+# Holmes  :smiley_cat:
 
-![GitHub](https://img.shields.io/github/license/Omoshirokunai/holmes-2?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/Omoshirokunai/holmes-2?style=flat-square)
+![GitHub](https://img.shields.io/github/license/Omoshirokunai/holmes2?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/Omoshirokunai/holmes2?style=flat-square)
 
 The open source home for digital image tools
 
 ## Table of contents
 
-- [Holmes  :smiley_cat](#holmes--smiley_cat)
+- [Holmes  :smiley_cat:](#holmes--smiley_cat)
   - [Table of contents](#table-of-contents)
   - [General info](#general-info)
   - [Available features](#available-features)
