@@ -1,0 +1,7 @@
+jpegio
+cython
+pillow
+pandas
+numpy
+streamlit
+wx
