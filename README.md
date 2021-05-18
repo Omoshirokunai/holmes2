@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/Omoshirokunai/holmes2?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/Omoshirokunai/holmes2?style=flat-square)
 
-The open source home for digital image tools
+The open source home for digital image foresnics and analysis tools
 
 ## Table of contents
 
