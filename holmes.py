@@ -63,7 +63,7 @@ except (NameError,AttributeError,FileNotFoundError):
     st.info("Images must be in ('jpg','png', or '.bmp') formats")
 
 ##? radio buttons logic
-tools = st.sidebar.selectbox('Advanced analysis',
+tools = st.sidebar.selectbox('Analysis',
     ["Summary","Metadata", "Quantization","ELA","Noiseprint"])
 
 if tools == "Metadata":

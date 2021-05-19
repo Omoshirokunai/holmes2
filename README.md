@@ -1,4 +1,4 @@
-# Holmes  :smiley_cat:
+# Holmes2  :smiley_cat:
 
 ![GitHub](https://img.shields.io/github/license/Omoshirokunai/holmes2?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/Omoshirokunai/holmes2?style=flat-square)
 
@@ -6,7 +6,7 @@ The open source home for digital image foresnics and analysis tools
 
 ## Table of contents
 
-- [Holmes  :smiley_cat:](#holmes--smiley_cat)
+- [Holmes2  :smiley_cat:](#holmes2--smiley_cat)
   - [Table of contents](#table-of-contents)
   - [General info](#general-info)
   - [Available features](#available-features)
@@ -32,6 +32,7 @@ This project is my undergrad final project and i initially intended it to be an 
 * Exif viewer
 * Quantization tables matching(not yet complete)
 * Error level analysis
+* [Noiseprint](https://github.com/grip-unina/noiseprint) by grip-unina
   
 ## Technologies
 
@@ -88,4 +89,4 @@ npm start
   
 ## issues
 
-* Currently runing noiseprint in a non-pythonic fashion.
+* Currently runing noiseprint in an unpythonic fashion.
