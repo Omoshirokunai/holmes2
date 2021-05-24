@@ -28,4 +28,7 @@ def app():
             progress_bar.progress(100)
             status_text.text('Done!')
             st.balloons()
-            st.image("heatmap.png")
+            try:
+                st.image("heatmap.png")
+            except FileNotFoundError:
+                st.error("noiseprint may not be working properly check if requirements have been properly installed")

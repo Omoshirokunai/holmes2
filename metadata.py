@@ -23,7 +23,7 @@ def app():
             st.dataframe(df,900,500)
         else:
             st.error("Sorry No Exif Found :crying_cat_face:")
-    except AttributeError:
+    except (AttributeError,FileNotFoundError):
         st.error("no image selected")
         
         
