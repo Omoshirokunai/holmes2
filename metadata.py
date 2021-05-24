@@ -12,12 +12,11 @@ import start_screen
 
 
 def app():
+    st.header("Metadata")
+    st.info("Metadata is infornamtion embeded within an image that informs about the settings used to capture a scene as well as infornmation about the camera and editing software used")
     try:
         im = str(start_screen.x)
-        # col1, col2 = st.beta_columns((1,2))
         
-        # with col2:
-        # st.subheader("Image Metadata")
         p = exifview.exif_meta(im)
         if p:
             df = pd.DataFrame(list(p.items()),columns = ['exif','values'])

@@ -12,33 +12,34 @@ import numpy as np
 def app():
     try:
         #get file object
-        
-        jpeg = jio.read(start_screen.x)  
-        col1, col2 = st.beta_columns(2)
-        # coef_array = jpeg.coef_arrays[0]  
-        with col1:
-            qtlum = jpeg.quant_tables[0]
-            qtlum = np.array(qtlum)
-            st.write("luminance",qtlum)
+        if start_screen.x != None:
+            jpeg = jio.read(start_screen.x)  
+            col1, col2 = st.beta_columns(2)
+            # coef_array = jpeg.coef_arrays[0]  
+            with col1:
+                qtlum = jpeg.quant_tables[0]
+                qtlum = np.array(qtlum)
+                st.write("luminance",qtlum)
+                
+            with col2:
+                qtchrom = jpeg.quant_tables[1]
+                qtchrom = np.array(qtchrom)
+                st.write("Chrominace",qtchrom)
             
-        with col2:
-            qtchrom = jpeg.quant_tables[1]
-            qtchrom = np.array(qtchrom)
-            st.write("Chrominace",qtchrom)
-        
-        #find qtable matches
-        st.write("Matches")
-        file1 = open("quantable_class\\sample.txt", "r+")
-        line = file1.readlines()
-        lumline = line[2:9]
-        file1.close
-        lumin = np.array([x[:-1] for x in lumline])
+            #find qtable matches
+            st.write("Matches")
+            file1 = open("quantable_class\\sample.txt", "r+")
+            line = file1.readlines()
+            lumline = line[2:9]
+            file1.close
+            lumin = np.array([x[:-1] for x in lumline])
 
-        comparison = lumin == qtlum.astype(str)
-        print(lumin)
-        equal_arrays = comparison.all()
-        print(equal_arrays)
-        
+            comparison = lumin == qtlum.astype(str)
+            print(lumin)
+            equal_arrays = comparison.all()
+            print(equal_arrays)
+        else:
+            st.error("no image selected")
     except AttributeError:
         st.error("no image selected")
     

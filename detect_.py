@@ -15,7 +15,7 @@ if thumbnail is not None:
         f.write(thumbnail)
 
 # Iterate through all the other ifd names and print them
-print(f'Metadata for {image_name}:')
+
 for ifd in exif_dict:
     # print(f'{ifd}:')
     for tag in exif_dict[ifd]:
@@ -25,6 +25,8 @@ for ifd in exif_dict:
         if isinstance(tag_value, bytes):
             tag_value = tag_value[:10]
         if "Software" in tag_name:
-            print(f'\t{tag_name}: {tag_value}')
+            if "Photoshop" in tag_value:
+                print(f'found Photoshop in image metadata:')
+                print(f'\t{tag_name}: {tag_value}')
         # print(f'\t{tag_name:25}: {tag_value}')
 print()

@@ -32,18 +32,23 @@ def convert_to_ela_image(path, quality):
     return ela_im
 
 def app():
+    st.header("Error level Analysis")
+    st.info("Error level analysis is a technique that can help to identify manipulations to compressed (JPEG) images by detecting the distribution of error introduced after resaving the image at a specific compression rate")
     try:
-        col1, col2 = st.beta_columns((1,2))
-        with col1:
-            value = st.slider("quality",1,255,95)
-            
-            p = convert_to_ela_image(start_screen.x,value)
-            # p = convert_to_ela_image(metadata.im,value)
-            extrema = p.getextrema()
-            max_diff = max([ex[1] for ex in extrema])
-            # st.write("Maximum difference was %d" % (max_diff))
-        with col2:
-            st.image(p,use_column_width=True)
+        if start_screen.x != None:
+            col1, col2 = st.beta_columns((1,2))
+            with col1:
+                value = st.slider("compression rate",1,255,95)
+                
+                p = convert_to_ela_image(start_screen.x,value)
+                # p = convert_to_ela_image(metadata.im,value)
+                extrema = p.getextrema()
+                max_diff = max([ex[1] for ex in extrema])
+                # st.write("Maximum difference was %d" % (max_diff))
+            with col2:
+                st.image(p,use_column_width=True)
+        else:
+            st.error("no image selected")
     except AttributeError:
         st.error("no image selected")
         

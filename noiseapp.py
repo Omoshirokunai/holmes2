@@ -5,9 +5,10 @@ import subprocess
 
 
 def app():
+    st.header("Noiseprint")
+    st.info("Noiseprint is a CNN-based camera model fingerprint extracted by a fully Convolutional Neural Network created by the Image Processing Research Group of the University Federico II of Naples, The Heatmap generated tries to estimate for each pixel, the likelihood that it has has been manipulated")
     if start_screen.x == None:
-        st.info("no image was selected")
-
+        st.error("no image selected")
     elif start_screen.x != None:
         
             #Todo 

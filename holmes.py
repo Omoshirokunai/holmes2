@@ -33,8 +33,14 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 ##----##
 
 ##? gui options and titles
-st.title("Welcome to Holmes :smiley_cat:")
+
+
 st.sidebar.title('Navigation')
+
+
+# openm = st.button("Open image")
+# if openm:
+#     start_screen.x = start_screen.load_file()
 
 openf = st.sidebar.button("Open an image")
 # opt = st.sidebar.checkbox("EXIF data",False)
@@ -51,27 +57,34 @@ if openf:
         if os.path.isfile('ref.mat'):
             subprocess.call("del ref.mat && del out-heat.png && del heatmap.png", shell=True)
             # start_screen.x = str(start_screen.get_path())
+col1,col2 = st.beta_columns((1,2))
 try:
     img = Image.open(start_screen.x)
-    col1,col2 = st.beta_columns((1,2))
     with col1:
-        st.image(img)
-    with col2:
-        st.write("Path: {}".format(start_screen.x))
-        
+        st.image(img)        
 except (NameError,AttributeError,FileNotFoundError):
     st.info("Images must be in ('jpg','png', or '.bmp') formats")
 
+
+    
 ##? radio buttons logic
 tools = st.sidebar.selectbox('Analysis',
     ["Summary","Metadata", "Quantization","ELA","Noiseprint"])
 
+if tools == "Summary" and start_screen.x != None:
+    import exifview
+    p = exifview.exif_meta(str(start_screen.x))
+    with col2:
+        st.write("Path: {}".format(start_screen.x))
+        if "Windows Photo Editor" in p.get("Software"):
+            st.error("Editing software detected")
+        else:
+            st.success("No specifed editing software found")
+
 if tools == "Metadata":
     metadata.app()
     
-    
 elif tools == "ELA":
-    st.subheader("Error level Analysis")
     ela.app()
 
 if tools == "Quantization":
@@ -88,6 +101,5 @@ stop = st.sidebar.button("Stop the app",help="force stop the app")
 from streamlit.script_runner import StopException, RerunException
 if relo:
     raise RerunException(None)
-
 if stop:
     raise StopException(None)
