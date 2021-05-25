@@ -36,8 +36,7 @@ net = FullConvNet(x_data, 0.9, tf.constant(False),  num_levels=17)
 #! saver = tf.compat.v1.train.Saver(net.variables_list)
 saver = tf.train.Saver(net.variables_list)
 
-configSess = tf.ConfigProto()
-configSess.gpu_options.allow_growth = True
+configSess = tf.ConfigProto(); configSess.gpu_options.allow_growth = True
 #configSess = tf.ConfigProto(gpu_options=tf.GPUOptions(per_process_gpu_memory_fraction=0.95))
 
 def genNoiseprint(img, QF=101, model_name='net'):

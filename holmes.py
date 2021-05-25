@@ -65,9 +65,9 @@ if openf:
     start_screen.x = None
     if start_screen.x == None:
         start_screen.x = start_screen.load_file()
-        # if os.path.isfile('ref.mat'):
-        #     subprocess.call("del ref.mat && del out-heat.png && del heatmap.png", shell=True)
-            # start_screen.x = str(start_screen.get_path())
+        if os.path.isfile('ref.mat'):
+            subprocess.call("del ref.mat && del out-heat.png && del heatmap.png", shell=True)
+            start_screen.x = str(start_screen.get_path())
     
 ##? radio buttons logic
 tools = st.sidebar.selectbox('Analysis',
