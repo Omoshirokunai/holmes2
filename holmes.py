@@ -81,7 +81,7 @@ def summary():
             import exifview
             p = exifview.exif_meta(str(start_screen.x))
             st.write("Path: {}".format(start_screen.x))
-            if str(p.get("Software")) in ["Windows Photo Editor", "Adobe Photoshop CC 2019 (Windows)"]:
+            if str(p.get("Software")) in ["Windows Photo Editor", "Adobe Photoshop CC 2019 (Windows)","Adobe Photoshop CC 2015.5 (Macintosh)"]:
                 st.error("Editing software detected")
             else:
                 st.success("No specifed editing software found")        
