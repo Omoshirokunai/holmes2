@@ -19,9 +19,9 @@ def app():
             # with st.spinner("executing noisprint"):
             status_text.text('generating noiseprint:')
             progress_bar.progress(25)
-            subprocess.call("python main_blind.py {} ref.mat".format(start_screen.x), shell=True)
+            subprocess.call("python main_blind.py {} ref.mat".format(start_screen.x), shell=False)
             progress_bar.progress(50)
-            subprocess.call("python main_map2uint8.py ref.mat out-heat.png", shell=True)
+            subprocess.call("python main_map2uint8.py ref.mat out-heat.png", shell=False)
             progress_bar.progress(75)
             status_text.text('computing heatmap:')
             subprocess.call("python main_showres.py {} out-heat.png ref.mat".format(start_screen.x), shell=True)

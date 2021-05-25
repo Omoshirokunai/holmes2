@@ -65,8 +65,8 @@ if openf:
     start_screen.x = None
     if start_screen.x == None:
         start_screen.x = start_screen.load_file()
-        if os.path.isfile('ref.mat'):
-            subprocess.call("del ref.mat && del out-heat.png && del heatmap.png", shell=True)
+        # if os.path.isfile('ref.mat'):
+        #     subprocess.call("del ref.mat && del out-heat.png && del heatmap.png", shell=True)
             # start_screen.x = str(start_screen.get_path())
     
 ##? radio buttons logic
@@ -86,7 +86,7 @@ def summary():
             import exifview
             p = exifview.exif_meta(str(start_screen.x))
             st.write("Path: {}".format(start_screen.x))
-            if "Windows Photo Editor" in p.get("Software"):
+            if str(p.get("Software")) in ["Windows Photo Editor", "Adobe Photoshop CC 2019 (Windows)"]:
                 st.error("Editing software detected")
             else:
                 st.success("No specifed editing software found")        
