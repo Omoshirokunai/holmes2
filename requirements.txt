@@ -5,3 +5,9 @@ pandas
 numpy
 streamlit
 wx
+tensorflow-gpu
+concurrent-iterator
+scipy
+scikit-image
+scikit-learn
+matplotlib
