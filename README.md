@@ -12,7 +12,6 @@ The open source home for digital image foresnics and analysis tools
   - [Available features](#available-features)
   - [Technologies](#technologies)
   - [Setup](#setup)
-  - [To run holmes2 with electron](#to-run-holmes2-with-electron)
   - [File structure](#file-structure)
   - [TODO](#todo)
   - [issues](#issues)
@@ -45,19 +44,18 @@ Project is created with:
 
 To run this project
 
-1. install necessary pip libraries
+install necessary pip libraries
 
 ```bash
  pip install -r requirements.txt
 ```
-
-2. run in browser
+To run holmes in browser
 
 ```bash
 streamlit run holmes.py
 ```
 
-## To run holmes2 with electron
+To run holmes2 with electron
 
 Install necessary npm libraries
 
