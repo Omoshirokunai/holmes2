@@ -36,7 +36,8 @@ def app():
             lumline = line[2:9]
             file1.close
             
-            
+            #TODO :
+            # section is hopefully temprorary till i change to use quantization tabes in quantable_class floder
             photoshoplum = np.array([
 
 [[27, 26, 41, 65, 66, 39, 34, 17],
