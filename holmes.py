@@ -44,14 +44,9 @@ st.sidebar.title('Navigation')
 btcol1, btcol2 = st.sidebar.beta_columns(2)
 with btcol1:
     openf = st.sidebar.button("Open image")
-
 with btcol2:
     relo = st.sidebar.button("reload the app",help="reload the app")
 
-# stop = st.sidebar.button("Stop the app",help="force stop the app")
-from streamlit.script_runner import StopException, RerunException
-if relo:
-    raise RerunException(None)
 # if stop:
 #     raise StopException(None)
 # opt = st.sidebar.checkbox("EXIF data",False)
@@ -120,3 +115,10 @@ if tools == "Noiseprint":
 
 ##--##
     print("done")
+    
+
+
+# stop = st.sidebar.button("Stop the app",help="force stop the app")
+from streamlit.script_runner import StopException, RerunException
+if relo:
+    raise RerunException(None)

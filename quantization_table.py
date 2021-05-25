@@ -10,6 +10,9 @@ import jpegio as jio
 import start_screen
 import numpy as np
 def app():
+    
+    st.header("Quantization tables")
+    st.info(" The quantization process is the main source of Lossy Compression. The quantization table is an 8X8 array that influences the degree of compression achieved. Hany farid showed that images exported with editing softwares like photoshop have quantization tables that are not found in images gotten from a camera.")
     try:
         #get file object
         if start_screen.x != None:
