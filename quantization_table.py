@@ -2,7 +2,7 @@
 Quantiztion table viewer
 
 this is a script that extracts chrominance and luminace quantization tables of an image
-then from a list of available tables we can deduce the software used to export the image this can come in handy in cases where
+then from a list of available tables we can deduce if any editing software (photoshop for now) was used to export the image this can come in handy in cases where
 metadata has also been tampered with or is not available.
 """
 import streamlit as st
@@ -92,7 +92,16 @@ def app():
 [1, 1, 1, 1, 1, 2, 2, 3],
 [1, 1, 1, 1, 2, 2, 3, 3],
 [1, 1, 1, 2, 2, 3, 3, 3],
-[1, 1, 2, 2, 3, 3, 3, 3]]
+[1, 1, 2, 2, 3, 3, 3, 3]],
+
+[[12,  8, 13, 21, 26, 32, 34, 17],
+[ 8,  9, 12, 20, 27, 23, 12, 12],
+[13, 12, 16, 26, 23, 12, 12, 12],
+[21, 20, 26, 23, 12, 12, 12, 12],
+[26, 27, 23, 12, 12, 12, 12, 12],
+[32, 23, 12, 12, 12, 12, 12, 12],
+[34, 12, 12, 12, 12, 12, 12, 12],
+[17, 12, 12, 12, 12, 12, 12, 12]]
 ])
             
             photoshopchrom = np.array([
@@ -148,16 +157,22 @@ def app():
 [2, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3],
-[3, 3, 3, 3, 3, 3, 3, 3]]
+[3, 3, 3, 3, 3, 3, 3, 3]],
+
+[[13, 13, 17, 27, 20, 20, 17, 17],
+[13, 14, 17, 14, 14, 12, 12, 12],
+[17, 17, 14, 14, 12, 12, 12, 12],
+[27, 14, 14, 12, 12, 12, 12, 12],
+[20, 14, 12, 12, 12, 12, 12, 12],
+[20, 12, 12, 12, 12, 12, 12, 12],
+[17, 12, 12, 12, 12, 12, 12, 12],
+[17, 12, 12, 12, 12, 12, 12, 12]]
             ])
             
-            # if qtlum.all() in photoshoplum.all() and qtchrom.all() in photoshopchrom.all():
-            #     st.write("photoshop found")
-            # else:
-            #     st.write("no mathcehes found")
-            # lumin = np.array([x[:-1] for x in lumline])
-
-            for i in range(6):
+            
+            # print(qtlum)
+            # print(qtchrom)
+            for i in range(7):
                 comparison = photoshoplum[i] == qtlum
                 
                 comparichrom = photoshopchrom[i] == qtchrom
@@ -165,8 +180,9 @@ def app():
                 equal_arrays = comparison.all()
                 equal_chrom = comparichrom.all()
                 if equal_arrays and equal_chrom:
-                    st.error("Found a matching photoshop quantization table")
-                        
+                    st.error("Found a matching photoshop quantization tables")
+                if i >= 6 and equal_arrays != True:
+                    st.success("No matching editing software quantization tables found")
             
         else:
             st.error("no image selected")

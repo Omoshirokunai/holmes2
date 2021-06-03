@@ -1,4 +1,4 @@
-# Holmes2  :smiley_cat:
+# Holmes2 
 
 ![GitHub](https://img.shields.io/github/license/Omoshirokunai/holmes2?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/Omoshirokunai/holmes2?style=flat-square)
 
@@ -6,7 +6,7 @@ The open source home for digital image foresnics and analysis tools
 
 ## Table of contents
 
-- [Holmes2  :smiley_cat:](#holmes2--smiley_cat)
+- [Holmes2](#holmes2)
   - [Table of contents](#table-of-contents)
   - [General info](#general-info)
   - [Available features](#available-features)
