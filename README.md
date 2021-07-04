@@ -55,24 +55,6 @@ To run holmes in browser
 streamlit run holmes.py
 ```
 
-To run holmes2 with electron
-
-Install necessary npm libraries
-
-```bash
-npm install electron
-```
-
-Run streamlit in headless mode and run electron
-
-```bash
-streamlit run holmes.py --server.headless true
-```
-
-```bash
-npm start
-```
-
 ## File structure
 
 * Holmes.py: is the main script, which contains streamlit page setup and page navigation
